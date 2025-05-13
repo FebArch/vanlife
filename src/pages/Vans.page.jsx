@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react"
 import VanCard from "../components/VanCard"
+import { Outlet, useParams } from "react-router"
 
 export default function Vans(props) {
+
+    // const { id } = useParams()
 
     const [vansData, setVansData] = useState([])
 
     useEffect(() => {
         fetch("/api/vans").then(res => res.json()).then((value) => {
-            console.log(value)
             setVansData(value.vans)
         })
     }, [])
@@ -19,14 +21,15 @@ export default function Vans(props) {
             />
         )
     })
+
     return (
         <div className="vansPage">
             <h1>Explore our van options</h1>
 
             <div className="vansContainer">
+                {/* { !id ? allVans : <Outlet />} */}
                 {allVans}
             </div>
-
         </div>
     )
 }

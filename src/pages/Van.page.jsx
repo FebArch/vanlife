@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 
 export default function VanPage(props) {
-    console.log('van called')
     const [vanData, setVanData] = useState({})
     let { id } = useParams()
 
@@ -17,7 +16,6 @@ export default function VanPage(props) {
         callAPI()
     }, [])
 
-    console.log(vanData)
     return (
         <div className="vanDetail">
             <img src={vanData.imageUrl} alt="" />
