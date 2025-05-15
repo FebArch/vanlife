@@ -417,3 +417,43 @@ footer{
     background-color: #fa9f2805;
   }
 }
+
+
+
+
+
+.VanDetailedPageContainer{
+  margin: 2vw auto;
+  width: 95vw;
+  height: 75vh;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color:rgba(255, 255, 255, 0.575);
+  padding: 2vw;
+}
+
+
+
+
+
+
+
+
+
+.VanDetailedPageBox{
+  display: flex;
+  align-items: center;
+}
+
+
+.BackToAllVans{
+  color: rgb(122, 121, 121);
+  text-decoration: underline;
+  &:hover{
+    color: rgb(49, 49, 49);
+  }
+}
+
+.BackToAllVans div{
+  margin: 2vw 0 0 5vw;
+}

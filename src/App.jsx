@@ -8,7 +8,11 @@ import Dashboard from './pages/Host/Dashboard'
 import Income from './pages//Host/Income'
 import Reviews from "./pages//Host/Reviews"
 import HostVans from './pages/Host/HostVans'
-import HostVanDetailedPage from './pages/Host/HostVanDetailedPage'
+import HostVanDetailedPageLayout from './pages/Host/HostVanDetailedPageLayout'
+
+import HostVanDetailedPageDetails from './components/HostVanDetailedPageDetails'
+import HostVanDetailedPagePricing from './components/HostVanDetailedPagePricing'
+import HostVanDetailedPagePhotos from './components/HostVanDetailedPagePhotos'
 
 import VansPage from './pages/Vans.page'
 import VanPage from './pages/Van.page'
@@ -31,10 +35,20 @@ export default function App() {
           <Route path="/about" element={<AboutPage />}></Route>
 
           <Route path='/host' element={<HostPage />} >
+            
             <Route index element={<Dashboard />} />   {/* path="" or index remains same think so!  */ }
             <Route path="income" element={<Income />} />
+            
             <Route path="vans" element={<HostVans />} />
-            <Route path={"vans/:id"} element={<HostVanDetailedPage />} />
+            <Route path={"vans/:id"} element={<HostVanDetailedPageLayout />} >
+
+              <Route index element={<HostVanDetailedPageDetails />} /> 
+              <Route path="pricing" element={<HostVanDetailedPagePricing />} />
+              <Route path="photos" element={<HostVanDetailedPagePhotos />} />
+
+            </Route>
+
+
             <Route path="reviews" element={<Reviews />} />
           </Route>
 

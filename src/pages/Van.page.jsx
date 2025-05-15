@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 
+import BackToAllVans from "../components/BackToAllVans"
+
+
 export default function VanPage(props) {
     const [vanData, setVanData] = useState({})
     let { id } = useParams()
@@ -17,6 +20,8 @@ export default function VanPage(props) {
     }, [])
 
     return (
+        <>
+    <BackToAllVans />
         <div className="vanDetail">
             <img src={vanData.imageUrl} alt="" />
             <div className="badge">
@@ -31,5 +36,6 @@ export default function VanPage(props) {
 
             <button className="btn">Find your van</button>
         </div>
+        </>
     )
 }
